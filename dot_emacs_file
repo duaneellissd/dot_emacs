@@ -2,4 +2,8 @@
 (global-set-key '[f9] 'next-error)
 (global-set-key '[S-f9] 'compile)
 (global-set-key '[f8] 'shell)
+(setq-default insert-tabs-mode nil)
+(setq-default tab-width 4)
+(setq-default indent-line-function 'insert-tab)
+
 
