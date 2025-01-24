@@ -22,11 +22,11 @@ function setup_dot_emacs_file()
 
 
 O_DOT_EMACS_DIR=${HOME}/.emacs.d
-I_DOT_EMACS_DIR=${HERE}/dot_emacs_dir
+I_DOT_EMACS_DIR=${HERE}/dot_emacs.d
 
 function setup_dot_emacs_dir()
 {
-    for x in e f d:
+    for x in e f d
     do
 	if [ -$x ${O_DOT_EMACS_DIR} ]
 	then
@@ -35,9 +35,11 @@ function setup_dot_emacs_dir()
 	fi
     done
 
-    # create a hard link
-    ln ${I_DOT_EMACS_DIR} ${O_DOT_EMACS_DIR}
+    # Directories must be symbolic links
+    ln -s ${I_DOT_EMACS_DIR} ${O_DOT_EMACS_DIR}
 }
+
 
 setup_dot_emacs_file
 setup_dot_emacs_dir
+
